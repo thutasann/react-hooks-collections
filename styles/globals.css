@@ -24,3 +24,26 @@ a {
     background: black;
   }
 }
+
+button{
+  background-color: #007bff;
+  color: white;
+  outline: none;  
+  border: none;
+  border-radius: 15px;
+  padding: 13px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button:hover{
+  background-color: #0359b5;
+}
+
+.header{
+  overflow-y: scroll;
+}
+.header a{
+  margin: 30px;
+}
