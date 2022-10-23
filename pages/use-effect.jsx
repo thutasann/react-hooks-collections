@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React, { useState, useEffect } from 'react'
+import { CopyBlock, dracula } from 'react-code-blocks';
 import Heading from '../components/heading';
 
 const UseEffect = () => {
@@ -30,6 +31,22 @@ const UseEffect = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Heading heading={'Use Effect'}/>
+
+
+            <CopyBlock
+                text="
+                    useEffect(() => {
+                        fetch(`https://jsonplaceholder.typicode.com/todos/1/${resourceType}`)
+                        .then(res => res.json())
+                        .then(json => setItems(json));
+                    }, [resourceType]);
+                "
+                language='javascript'
+                wrapLines
+                theme={dracula}
+                codeBlock={true}
+            />
+
             <button onClick={() => setResourceType('posts')}>Posts</button>
             <button onClick={() => setResourceType('users')}>Users</button>
             <button onClick={() => setResourceType('comments')}>Comments</button>

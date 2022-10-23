@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React, { useState, useMemo, useEffect } from 'react'
+import { CopyBlock, dracula } from 'react-code-blocks';
 import Heading from '../components/heading';
 
 const UseMemo = () => {
@@ -37,6 +38,18 @@ const UseMemo = () => {
             </Head>
 
             <Heading heading={'Use Memo'}/>
+
+            <CopyBlock
+                text="
+                    const doubleNumber = useMemo(() => {
+                        return slowFunction(number);
+                    }, [number]);
+                "
+                language='javascript'
+                wrapLines
+                theme={dracula}
+                codeBlock={true}
+            />
 
             <input 
                 type="number" 
