@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import Heading from '../components/heading'
 
