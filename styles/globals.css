@@ -31,10 +31,13 @@ button{
   outline: none;  
   border: none;
   border-radius: 15px;
-  padding: 13px;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   margin: 10px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 button:hover{
@@ -44,6 +47,15 @@ button:hover{
 .header{
   overflow-y: scroll;
 }
+.header::-webkit-scrollbar{
+  display: none;
+}
+
+
 .header a{
   margin: 30px;
+}
+
+.header > a.active{
+  color: red !important;
 }
