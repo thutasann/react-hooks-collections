@@ -20,11 +20,20 @@ export default function Home() {
           Collected By <code className={styles.code}>Thuta sann</code>
         </p>
 
+        <p className={styles.description}>
+          Source code - 
+          <code className={styles.code}>
+            <a href='https://github.com/thutasann/react-hooks-collections' target="_blank" rel="noopener noreferrer">
+              https://github.com/thutasann/react-hooks-collections
+            </a>
+          </code>
+        </p>
+
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
