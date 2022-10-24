@@ -1,8 +1,25 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import { CopyBlock, dracula } from 'react-code-blocks';
 import Heading from '../components/heading'
 
 const UseLayoutEffect = () => {
+
+    const [ count, setCount ] = useState(0);
+    const [ show, setShow ] = useState(false);
+    const popup = useRef();
+    const button = useRef();
+    
+    useLayoutEffect(() => {
+        console.log(count);
+    }, [count]);
+
+    useLayoutEffect(() => {
+        if(popup.current == null || button.current == null) return;
+        const { bottom } = button.current.getBoundingClientRect();
+        popup.current.style.top = `${bottom + 25}px`;
+    }, [show]);
+
     return (
         <div>
             <Head>
@@ -11,6 +28,49 @@ const UseLayoutEffect = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Heading heading={'Use LayoutEffect'}/>
+
+            <CopyBlock
+                text="
+                useLayoutEffect(() => {
+                    console.log(count);
+                }, [count]);
+                "
+                language='javascript'
+                wrapLines
+                theme={dracula}
+                codeBlock={true}
+            />
+
+            <br />
+
+            <button
+                onClick={() => setCount(c => c + 1)}
+            >Increment</button>
+
+            <div
+                style={{
+                    marginLeft: "10px",
+                    marginTop: "10px"
+                }}
+            >
+                {count}
+            </div>
+
+            <Heading heading={'Modal Popup Example'}/>
+
+            <button ref={button} onClick={() => setShow(prev => !prev)}>
+                Click Here
+            </button>
+
+            {
+                show && (
+                    <div style={{ position: 'absolute' }} ref={popup}>
+                        This is a popup
+                    </div>
+                )
+            }
+
+
 
         </div>
     )
