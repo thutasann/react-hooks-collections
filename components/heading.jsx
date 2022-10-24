@@ -5,7 +5,8 @@ const Heading = ({heading}) => {
         <div
             style={{
                 textAlign: 'center',
-                color: 'white'
+                color: 'white',
+                marginBottom: "30px"
             }}
         >
             <h1>{heading}</h1>

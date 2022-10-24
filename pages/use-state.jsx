@@ -36,7 +36,13 @@ const UseState = () => {
             <Heading heading={'Use State'}/>
 
             <CopyBlock
-                text={decrementCount}
+                text="
+                const decrementCount = () => {
+                    setState(previousState => {
+                        return { ...previousState, count: previousState.count - 1 }
+                    })
+                }
+                "
                 language='javascript'
                 wrapLines
                 theme={dracula}

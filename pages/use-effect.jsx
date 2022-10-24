@@ -56,7 +56,7 @@ const UseEffect = () => {
             <h1>{resourceType}</h1>
 
             <div
-                style={{ width: "100%", overflowY: 'scroll'}}
+                style={{ width: "100%", overflowX: 'scroll'}}
             >
 
                 {
